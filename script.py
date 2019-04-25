@@ -1,12 +1,13 @@
 #!/usr/bin/python
 import subprocess
 import os
+import sys
 
 fileName = "/tmp/output.iq"
 actualFile = "output.iq"
 
 fileToWriteTo = open(actualFile, 'wb')
-with open('test.txt') as fp:
+with open(sys.argv[1]) as fp:
   for line in fp:
     args = line.rstrip().split(" ")
     print("args: ", args)
